@@ -23,6 +23,10 @@ console.log(test); // ['LAIKA', 'BELKA']
 
 function myForEach(array, cb) {
     // Your code here
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+            cb(element)
+    }
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
