@@ -18,6 +18,12 @@ console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 
 function myMap(array, cb) {
     // Your code here
+    let mapped = []
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        cb(element)
+    }
+    return mapped
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
