@@ -44,11 +44,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function selectiveMap(array, selector, mapper) {
     // Your code here
+    let newArr = []
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (selector(element)) {
+            newArr.push(mapper(element))
+        } else {
+            newArr.push(element)
+        }
+    }
+    return newArr
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = selectiveMap;
-} catch(e) {
+} catch (e) {
     return null;
 }
