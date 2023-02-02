@@ -31,7 +31,32 @@ console.log(chainMap(4, half, square));         // 4
 
 function chainMap(val, ...callbacks) {
   // Your code here
+  let cbs = [...callbacks];
+  let res = val;
+  for (let index = 0; index < cbs.length; index++) {
+    const callback = cbs[index];
+    res = callback(res);
+  }
+  return res;
 }
+
+let add5 = function(n) {
+  return n + 5;
+};
+
+let half = function(n) {
+  return n / 2;
+};
+
+let square = function(n) {
+  return n * n;
+};
+
+console.log(chainMap(25, add5));                // 30
+console.log(chainMap(25, add5, half));          // 15
+console.log(chainMap(25, add5, half, square));  // 225
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

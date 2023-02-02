@@ -25,7 +25,16 @@ console.log(result3);   // true
 
 function mySome(array, cb) {
     // Your code here
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if(cb(element,index)){
+            return true;
+        }
+    }
+    return false;
+
 }
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
